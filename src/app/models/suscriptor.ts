@@ -4,6 +4,6 @@ export class Suscriptor {
 	tel: Number;
 	catego: String;
 	ciudad: String;
-	direccion: string;
+	direccion: String;
 	gatos: Boolean;
 }
