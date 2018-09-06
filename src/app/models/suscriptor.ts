@@ -1,9 +1,9 @@
 export class Suscriptor {
-	nombre: String;
-	rela_paren: String;
-	tel: Number;
-	catego: String;
-	ciudad: String;
-	direccion: String;
-	gatos: Boolean;
+	nombre: string;
+	rela_paren: string;
+	tel: number;
+	catego: string;
+	ciudad: string;
+	direccion: string;
+	gatos: boolean;
 }

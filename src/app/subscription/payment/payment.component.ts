@@ -75,10 +75,9 @@ export class PaymentComponent implements OnInit {
       this.router.navigate(['subscription/plan'], {});
     }
     this.transaction = new Transaction();
-    // this.transaction.order['buyer'].fullName = 'prueba de nombre';
     // this.transaction.order.buyer.fullName='fa';
     // console.log('Datos Transaction', this.transaction.order['buyer'].buyer.fullName);
-    console.log('Datos Transaction', JSON.stringify(this.transaction));
+    // console.log('Datos Transaction', this.transaction);
   }
 
   ngOnInit() {
@@ -119,7 +118,7 @@ export class PaymentComponent implements OnInit {
       //   }
       // });
       // this.transaction.order.buyer.fullName = this.datosPago.nombre + ' ' + this.datosPago.apellidos;
-      // this.llenarJsonTransaction();
+      this.llenarJsonTransaction();
       console.log('Datos Transaction', JSON.stringify(this.transaction));
       console.log('Datos Validados Correctamente', JSON.stringify(this.datosPago));
 
@@ -129,45 +128,45 @@ export class PaymentComponent implements OnInit {
     }
   }
   llenarJsonTransaction() {
-    // this.transaction.order.buyer.merchantBuyerId = '';
-    // this.transaction.order.buyer.fullName = '';
-    // this.transaction.order.buyer.emailAddress = '';
-    // this.transaction.order.buyer.contactPhone = '';
-    // this.transaction.order.buyer.dniNumber = '';
-    // this.transaction.order.buyer.shippingAddress.street1 = '';
-    // this.transaction.order.buyer.shippingAddress.street2 = '';
-    // this.transaction.order.buyer.shippingAddress.city = '';
-    // this.transaction.order.buyer.shippingAddress.state = '';
-    // this.transaction.order.buyer.shippingAddress.country = '';
-    // this.transaction.order.buyer.shippingAddress.postalCode = '';
-    // this.transaction.order.shippingAddress.phone = '';
-    // this.transaction.order.shippingAddress.street1 = '';
-    // this.transaction.order.shippingAddress.street2 = '';
-    // this.transaction.order.shippingAddress.city = '';
-    // this.transaction.order.shippingAddress.state = '';
-    // this.transaction.order.shippingAddress.country = '';
-    // this.transaction.order.shippingAddress.postalCode = '';
-    // this.transaction.order.shippingAddress.phone = '';
-    // this.transaction.payer.merchantPayerId = '';
-    // this.transaction.payer.fullName = '';
-    // this.transaction.payer.emailAddress = '';
-    // this.transaction.payer.contactPhone = '';
-    // this.transaction.payer.dniNumber = '';
-    // this.transaction.payer.billingAddress.street1 = '';
-    // this.transaction.payer.billingAddress.street2 = '';
-    // this.transaction.payer.billingAddress.city = '';
-    // this.transaction.payer.billingAddress.state = '';
-    // this.transaction.payer.billingAddress.country = '';
-    // this.transaction.payer.billingAddress.postalCode = '';
-    // this.transaction.payer.billingAddress.phone = '';
-    // this.transaction.creditCard.number = '';
-    // this.transaction.creditCard.securityCode = '';
-    // this.transaction.creditCard.expirationDate = '';
-    // this.transaction.creditCard.name = '';
-    // this.transaction.paymentMethod = '';
-    // this.transaction.paymentCountry = '';
-    // this.transaction.cookie = '';
-    // this.transaction.userAgent = '';
+    this.transaction.order.buyer.merchantBuyerId = '1';
+    this.transaction.order.buyer.fullName = this.datosPago.nombre + ' ' + this.datosPago.apellidos;
+    this.transaction.order.buyer.emailAddress = this.datosPago.email;
+    this.transaction.order.buyer.contactPhone = this.datosPago.telefono;
+    this.transaction.order.buyer.dniNumber = this.datosPago.numeroDocumento;
+    this.transaction.order.buyer.shippingAddress.street1 = this.suscriptor.direccion;
+    this.transaction.order.buyer.shippingAddress.street2 = '';
+    this.transaction.order.buyer.shippingAddress.city = this.suscriptor.ciudad;
+    this.transaction.order.buyer.shippingAddress.state = 'Departamento';
+    this.transaction.order.buyer.shippingAddress.country = 'Colombia';
+    this.transaction.order.buyer.shippingAddress.postalCode = 'XXX';
+    this.transaction.order.shippingAddress.phone = this.datosPago.telefono;
+    this.transaction.order.shippingAddress.street1 = this.suscriptor.direccion;
+    this.transaction.order.shippingAddress.street2 = '';
+    this.transaction.order.shippingAddress.city = this.suscriptor.ciudad;
+    this.transaction.order.shippingAddress.state = 'Departamento';
+    this.transaction.order.shippingAddress.country = 'Colombia';
+    this.transaction.order.shippingAddress.postalCode = 'XXX';
+    this.transaction.order.shippingAddress.phone = this.datosPago.telefono;
+    this.transaction.payer.merchantPayerId = '1';
+    this.transaction.payer.fullName = this.datosPago.nombreTarjeta;
+    this.transaction.payer.emailAddress = this.datosPago.email;
+    this.transaction.payer.contactPhone = this.datosPago.celularTarjeta;
+    this.transaction.payer.dniNumber = this.datosPago.numeroDocumentoTarjeta;
+    this.transaction.payer.billingAddress.street1 = this.suscriptor.direccion;
+    this.transaction.payer.billingAddress.street2 = '';
+    this.transaction.payer.billingAddress.city = this.suscriptor.ciudad;
+    this.transaction.payer.billingAddress.state = 'Departamento';
+    this.transaction.payer.billingAddress.country = 'Colombia';
+    this.transaction.payer.billingAddress.postalCode = 'XXX';
+    this.transaction.payer.billingAddress.phone = this.datosPago.celularTarjeta;
+    this.transaction.creditCard.number = this.datosPago.numeroTarjeta;
+    this.transaction.creditCard.securityCode = this.datosPago.codigoSeguridad;
+    this.transaction.creditCard.expirationDate = this.datosPago.fechaVencimiento;
+    this.transaction.creditCard.name = this.datosPago.nombreTarjeta;
+    this.transaction.paymentMethod = this.datosPago.tarjeta;
+    this.transaction.paymentCountry = 'Colombia';
+    this.transaction.cookie = 'Cookie!!';
+    this.transaction.userAgent = 'UserAgent!!';
 
   }
 
@@ -178,16 +177,16 @@ export class PaymentComponent implements OnInit {
 
   }
   validarNumber(numero) {
-    console.log(!isNaN(numero) && numero !== '');
+    // console.log(!isNaN(numero) && numero !== '');
     // console.log(numero !== '' + ' {{{{{{ ¿ ' + Number.isNaN(numero) );
     // return numero !== '' && isNaN(numero);
     return !isNaN(numero) && numero !== '';
   }
   validarEmail(email1: string, email2: string) {
     // console.log(email1 + '¿----¿  ' + email2);
-    console.log('igualdad de emails: ');
+    // console.log('igualdad de emails: ');
     if (this.validarString(email1) && this.validarString(email2)) {
-      console.log('email no vacios');
+      // console.log('email no vacios');
       return email1 === email2;
     }
     return false;

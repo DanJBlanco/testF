@@ -1,52 +1,52 @@
 export class Transaction {
-  order: [{
+  order = {
     buyer: {
-      merchantBuyerId: string,
-      fullName: string,
-      emailAddress: string,
-      contactPhone: string,
-      dniNumber: string,
+      merchantBuyerId: '',
+      fullName: '',
+      emailAddress: '',
+      contactPhone: '',
+      dniNumber: '',
       shippingAddress: {
-        street1: string,
-        street2: string,
-        city: string,
-        state: string,
-        country: string,
-        postalCode: string,
-        phone: string,
+        street1: '',
+        street2: '',
+        city: '',
+        state: '',
+        country: '',
+        postalCode: '',
+        phone: '',
       }
-    }}, {
+    },
     shippingAddress: {
-      street1: string,
-      street2: string,
-      city: string,
-      state: string,
-      country: string,
-      postalCode: string,
-      phone: string
-    }
-  }];
-  payer: {
-    merchantPayerId: string,
-    fullName: string,
-    emailAddress: string,
-    contactPhone: string,
-    dniNumber: string,
-    billingAddress: {
-      street1: string,
-      street2: string,
-      city: string,
-      state: string,
-      country: string,
-      postalCode: string,
-      phone: string
+      street1: '',
+      street2: '',
+      city: '',
+      state: '',
+      country: '',
+      postalCode: '',
+      phone: ''
     }
   };
-  creditCard: {
-    number: string,
-    securityCode: string,
-    expirationDate: string,
-    name: string,
+  payer= {
+    merchantPayerId: '',
+    fullName: '',
+    emailAddress: '',
+    contactPhone: '',
+    dniNumber: '',
+    billingAddress: {
+      street1: '',
+      street2: '',
+      city: '',
+      state: '',
+      country: '',
+      postalCode: '',
+      phone: ''
+    }
+  };
+  creditCard = {
+    number: '',
+    securityCode: '',
+    expirationDate: '',
+    name: '',
   };
   paymentMethod: string;
   paymentCountry: string;
